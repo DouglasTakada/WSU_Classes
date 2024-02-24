@@ -1,0 +1,25 @@
+Use ls and cd to get to working directory
+Once you are in the directory with the cpp and h files make a directory called build: mkdir build
+Now run command 
+mkdir build
+cmake -S . -B build
+cmake --build build
+// Run the executable inside build
+"-S" is path to source file,
+"." Represents the current directory (CPTS-223-Examples/cmake-example),
+-B: the path to build the project, in which we can find the executable files
+Here we set the newly created directory “build” as this build path
+cmake –build build
+“--build”: the command for building this project according to the configuration in CMakeLists.txt
+The second “build” is the newly created directory “build”
+go into the build directory with cd build
+run the executable withe ./ before it and it should run the file
+
+cat (nameoffile) - print contents of file
+more (filename) - print contents of entire file
+
+explorer.exe . to find the files in ubuntu to edit in a IDE
+
+//File Path for PA 1: \\wsl$\Ubuntu\home\douglastakada\PA1\cmakePA1
+
+\\wsl$\Ubuntu\home\douglastakada\MA2\cmakeMA2

@@ -1,0 +1,13 @@
+#Reads from the given file that the graph data is written to and creates a visual graph
+
+dot -Tpng RR.txt -o RR.png && sxiv RR.png
+
+dot -Tpng EVEN.txt -o EVEN.png && sxiv EVEN.png
+
+dot -Tpng PRIME.txt -o PRIME.png && sxiv PRIME.png
+
+dot -Tpng RR2.txt -o RR2.png && sxiv RR2.png
+
+dot -Tpng RR2STAR.txt -o RR2STAR.png && sxiv RR2STAR.png
+
+dot -Tpng FINAL.txt -o FINAL.png && sxiv FINAL.png

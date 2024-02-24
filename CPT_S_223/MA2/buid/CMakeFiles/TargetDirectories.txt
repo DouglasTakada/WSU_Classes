@@ -1,0 +1,3 @@
+/home/douglastakada/MA2/cmakeMA2/build/CMakeFiles/MA2.dir
+/home/douglastakada/MA2/cmakeMA2/build/CMakeFiles/edit_cache.dir
+/home/douglastakada/MA2/cmakeMA2/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,111 @@
+.hero {
+    text-align:center;
+    background: $primary-color;
+    background: linear-gradient(to bottom,  $primary-color 0%, darken($primary-color, 35%) 100%);
+    min-height:70vh;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    h1 {
+        width:100%;
+        color:#c4c4c4;
+        font-size: 5.5rem;
+        font-weight: bolder;
+        margin-bottom: 1rem;
+        span {
+            color:lighten(#c4c4c4, 5%);
+            display:block;
+            font-size: 3.5rem;
+            line-height: 3rem;
+            font-style: italic;
+        }
+    }
+    p {
+        color:#c4c4c4;
+        a {
+            display:block;
+            margin-top:8vh;
+            i {
+                font-size:3rem;
+                color:#fff;
+            }
+        }
+    }
+}
+
+.belowhero {
+    position: relative;
+    top:-15vh;
+    display: flex;
+    flex-wrap: wrap;
+    @include container;
+    .herocta {
+        flex: 1 0 calc(25% - 4rem);
+        margin: 0 .5rem;
+        padding:1rem;
+        background-color:#fff;
+        text-align:center;
+        border-radius: 20px;
+        min-height:250px;
+        position: relative;
+        transition: all .25s ease-out 0s;
+        @include box-shadow;
+        &.top {
+            top:-50px;
+        }
+        .content {
+            width:80%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            h2 {
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+            .icon {
+                border-radius:50%;
+                background-color:$primary-color;
+                height:50px;
+                width:50px;
+                position: relative;
+                margin:1rem auto;
+                padding:.5rem;
+                i {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size:1.5rem;
+                    color:#fff;
+                }
+            }
+            .btn {
+                visibility: hidden;
+                width:calc(100% - 3rem);
+                color:$secondary-color;
+                position:absolute;
+                top:110%;
+                left:0;
+                transition: all 0.05s linear;
+                text-align:left;
+                padding-right:1.5rem;
+            }
+        }
+        &.active {
+            background-color:$primary-color;
+            color:#fff;
+            .icon {
+                background-color:#fff;
+                i {
+                    color:$primary-color;
+                }
+            }
+            .btn {
+                visibility: visible;
+                top:105%;
+                &:hover {
+                    background-color:#fff;
+                }
+            }
+        }
+    }
+}

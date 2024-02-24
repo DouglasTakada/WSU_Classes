@@ -1,0 +1,285 @@
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: whitesmoke;
+}
+
+.header1{
+    grid-area: header1;
+    background-color: rgb(78, 0, 151);
+    color: white;
+    padding: 0.5%
+}
+
+.header1 .news{
+    float: inline-end;
+    margin: 0.6%;
+    margin-top: 0.2%;
+    margin-bottom: 0.2%;
+    font-size: 10pt;
+}
+
+.header1 .contact{
+    float: inline-end;
+    margin: 0.6%;
+    margin-top: 0.2%;
+    margin-bottom: 0.2%;
+    font-size: 10pt;
+}
+
+.header1 .info{
+    float: inline-end;
+    margin: 0.6%;
+    margin-right: 2%;
+    border-left: solid;
+    padding-left: 0.5%;
+    margin-top: 0.2%;
+    margin-bottom: 0.2%;
+    font-size: 10pt;
+    
+}
+
+.header1 .name{
+    float: inline-start;
+    margin-right: 0.6%;
+    margin-left: 3%;
+    margin-top: 0.2%;
+    margin-bottom: 0.2%;
+    font-size: 16pt;
+}
+
+.header2{
+    grid-area: header2;
+    padding: 1%;
+    padding-left: 3%;
+    background-color: white;
+}
+
+.header2 .image{
+    float: inline-start;
+}
+
+.header2 .search{
+    float: inline-end;
+    margin-right: 3%;
+}
+
+.header3{
+    grid-area: header3;
+    background-color: white;
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+    border-top: solid 1px #a8a8a8;
+    border-bottom: solid 5px  rgb(78, 0, 151);
+}
+
+.header3 .dropbtn{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: white;
+    font-weight: 800;
+    color: rgb(78, 0, 151);
+    border-left: solid 1px #a8a8a8;
+    border-right: solid 1px #a8a8a8;
+    border-top: none;
+    border-bottom: none;
+}
+
+.header3 .dropbtn.about{
+    float: inline-start;
+    position: relative;
+    margin-left: 3%;
+}
+
+.header3 .dropbtn.academics{
+    float: inline-start;
+    position: relative;
+}
+
+.header3 .dropbtn.research{
+    position: relative;
+    float: inline-start;
+}
+
+.header3 .dropbtn.office{
+    position: relative;
+    float: inline-start;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    margin-top: 10%;
+    margin-left: 13%;
+    width: 160px;
+}
+
+.sidebar .section{
+    padding: 10%;
+    border-bottom: solid 3px  rgb(167, 167, 167);
+}
+
+.sidebar .research{
+    padding-left: 10%;
+    padding-top: 10%;
+}
+
+.sidebar .directory{
+    padding-left: 10%;
+    padding-top: 10%;
+    font-weight: 800;
+    color: rgb(78, 0, 151);
+}
+
+.sidebar .fellow{
+    padding-left: 15%;
+    padding-top: 10%;
+}
+
+.content{
+    grid-area: content;
+    color: rgb(78, 0, 151);
+    background-color: white;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+    margin-right: 5%;
+    border-bottom: solid 3px  rgb(167, 167, 167);
+    
+}
+
+.content .header-in-content{
+    margin: 4%;
+    font-weight: 800;
+}
+
+.content .name1{
+    margin: 4%;
+    margin-top: 3%;
+    font-size: 25pt;
+}
+
+.content .professor-img{
+    float: inline-start;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    margin-right: 5%;
+    
+}
+
+.content .professor-img p{
+    color: black;
+    font-size: 12pt;
+    word-spacing: 100%;
+    width: 300px;
+    line-height: 30px;
+}
+
+.content .professor-img h3{
+    font-size: 18pt;
+}
+
+.content .professor-img a{
+    color: rgb(78, 0, 151);
+}
+
+.content .right-side h3{
+    
+    font-size: 18pt;
+}
+
+
+.content .right-side p{
+    color: black;
+    font-size: 13pt;
+    margin-right: 10%;
+    line-height: 30px;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: rgb(78, 0, 151);
+    color: white;
+    padding-bottom: 3%;
+}
+
+.footer .left{
+    float: inline-start;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 2%;
+    width: 10%;
+    font-size: 18pt;
+}
+
+.footer .middle{
+    float: inline-start;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 5%;
+    font-size: 14pt;
+}
+
+.footer .middle h3{
+    margin-top: 0%;
+    margin-bottom: 2%;
+}
+
+.footer .middle p{
+    float: inline-start;
+    font-size: 12pt;
+    border-bottom: dotted 1px;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    margin-right: 3%;
+    font-weight: bolder;
+}
+
+.footer .middle p#location{
+    float: inline-start;
+    font-size: 12pt;
+    margin-top: 0%;
+    margin-bottom: 3.5%;
+    border-bottom: none;
+}
+
+.footer .middle p#content-info{
+    margin-bottom: 3.5%
+}
+
+.footer .right{
+    float: inline-start;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.footer .right img{
+    width: 25px;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+
+.lowerfooter{
+    grid-area: lowerfooter;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: rgb(57, 0, 111);
+    color: white;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-areas:
+    "header1 header1 header1 header1 header1 header1 header1 header1 header1 header1"
+    "header2 header2 header2 header2 header2 header2 header2 header2 header2 header2"
+    "header3 header3 header3 header3 header3 header3 header3 header3 header3 header3"
+    "sidebar sidebar content content content content content content content content"
+    "footer footer footer footer footer footer footer footer footer footer"
+    "lowerfooter lowerfooter lowerfooter lowerfooter lowerfooter lowerfooter lowerfooter lowerfooter lowerfooter lowerfooter";
+}

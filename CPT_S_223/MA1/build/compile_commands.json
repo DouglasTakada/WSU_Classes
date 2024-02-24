@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/douglastakada/MA1/cmakeMA1/build",
+  "command": "/usr/bin/g++    -Wall -g -g -std=gnu++11 -o CMakeFiles/MA1.dir/main.cpp.o -c /home/douglastakada/MA1/cmakeMA1/main.cpp",
+  "file": "/home/douglastakada/MA1/cmakeMA1/main.cpp"
+},
+{
+  "directory": "/home/douglastakada/MA1/cmakeMA1/build",
+  "command": "/usr/bin/g++    -Wall -g -g -std=gnu++11 -o CMakeFiles/MA1.dir/testQueue.cpp.o -c /home/douglastakada/MA1/cmakeMA1/testQueue.cpp",
+  "file": "/home/douglastakada/MA1/cmakeMA1/testQueue.cpp"
+},
+{
+  "directory": "/home/douglastakada/MA1/cmakeMA1/build",
+  "command": "/usr/bin/g++    -Wall -g -g -std=gnu++11 -o CMakeFiles/MA1.dir/queue.cpp.o -c /home/douglastakada/MA1/cmakeMA1/queue.cpp",
+  "file": "/home/douglastakada/MA1/cmakeMA1/queue.cpp"
+}
+]

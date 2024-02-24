@@ -1,0 +1,14 @@
+{
+    "python.testing.pytestArgs": [
+        "HW4pt1"
+    ],
+    "python.testing.unittestEnabled": true,
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./HW4pt2",
+        "-p",
+        "test*.py"
+    ]
+}

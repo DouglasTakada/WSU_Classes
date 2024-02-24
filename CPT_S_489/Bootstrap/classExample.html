@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.css">
+    <style>
+        .box {
+            border: 1px solid;
+        }
+        .ht100{
+            height: 100px;
+        }
+        .ht200{
+            height: 200px;
+        }
+        .ht300{
+            height: 300px;
+        }
+        .ht500{
+            height: 500px;
+        }
+        .aqua{
+            background-color: aqua;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello Bootstrap World</h1>
+    <!-- Container centers columns and does not take up entire page container-fluid takes up entire page -->
+    <!-- having content in row will break bootstrap. only content in col -->
+        <div class="container box">
+            <div class="row ht100">
+                <div class="col-2 blue"></div>
+                <div class="col-10 aqua"></div>
+            </div>
+            <div class="row ht500">
+                <div class="col green"></div>
+            </div>
+            <div class="row">
+                <div class="col-6 aqua ht300"></div>
+                <div class="col-6 aqua ht300">
+                    <div class="row-cols-1">
+                        <div class="col ht100 aqua"></div>
+                        <div class="col ht100 green"></div>
+                        <div class="col ht100 aqua"></div>
+                        <button class="btn m-3"> My Button</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row row-cols-2">
+                <div class="col ht100 box blue">a</div>
+                <div class="col ht100 box blue">a</div>
+                putting in more col here will just overflow onto the next row.
+                <div class="col ht100 box green">a</div>
+                <div class="col ht100 box green">a</div>
+            </div> -->
+        </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

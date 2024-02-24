@@ -1,0 +1,11 @@
+JS never ment to run work alone - always delegates tasks - Hosted language
+Needs a runtime environment
+Single threaded but better than other languages - not wait for tasks to keep running - way it handles IO
+Weakly typed language
+
+7 primitive types in JS: int. bigint. string, bool. null. undefined. symbol // assigned in stack
+
+3 Reference types in JS: object. Array. Function. Stored in heap
+
+JS is loosly types language == everything implicitly cast -- not complain until it compiles
+strongly types language - complains when it is initialized

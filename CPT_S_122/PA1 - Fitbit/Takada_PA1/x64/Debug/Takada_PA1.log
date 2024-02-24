@@ -1,0 +1,10 @@
+﻿  functions.c
+C:\CS 122\PA1 - Fitbit\Takada_PA1\functions.c(65,35): warning C4244: '=': conversion from 'double' to 'unsigned int', possible loss of data
+C:\CS 122\PA1 - Fitbit\Takada_PA1\functions.c(72,38): warning C4244: '=': conversion from 'double' to 'unsigned int', possible loss of data
+C:\CS 122\PA1 - Fitbit\Takada_PA1\functions.c(79,34): warning C4244: '=': conversion from 'double' to 'unsigned int', possible loss of data
+C:\CS 122\PA1 - Fitbit\Takada_PA1\functions.c(104,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\CS 122\PA1 - Fitbit\Takada_PA1\functions.c(151,23): warning C4018: '>': signed/unsigned mismatch
+  main.c
+  Generating Code...
+C:\CS 122\PA1 - Fitbit\Takada_PA1\functions.c(117): warning C4172: returning address of local variable or temporary: newline
+  Takada_PA1.vcxproj -> C:\CS 122\PA1 - Fitbit\x64\Debug\Takada_PA1.exe

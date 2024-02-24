@@ -1,0 +1,13 @@
+source, dest, label
+foo,boo,CallExpr
+boo,foo,int
+foo,boo,CallExpr
+boo,foo,int
+goo,foo,CallExpr
+goo,boo,CallExpr
+boo,goo,int
+main,foo,CallExpr
+main,goo,CallExpr
+goo,main,int
+main,boo,CallExpr
+boo,main,int

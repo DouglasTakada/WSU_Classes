@@ -1,0 +1,19 @@
+1. go to file path
+2. Enter: ghc --make "filename"
+3.Enter: "ghci "filename.hs"
+Or "/.filename.exe"
+
+or
+
+1. ghci "filename.hs"
+2. function name
+
+or
+
+1. ghci
+2. :l hello
+
+How to test functions:
+
+1. compile and load to ghci
+2. :l "testName"
