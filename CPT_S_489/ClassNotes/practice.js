@@ -90,30 +90,71 @@ console.log(o1.add.call(o2)); //overwriting function to take in different object
 
 
 //Method call vs function call
-function Student (name, major) {// Constructor
-    this.name = name;
-    this.major = major;
-    // this.print = function () {
-    //     console.log(this.name, ":", this.major);
-    // };
-    return this;
+// function Student (name, major) {// Constructor
+//     this.name = name;
+//     this.major = major;
+//     // this.print = function () {
+//     //     console.log(this.name, ":", this.major);
+//     // };
+//     // return this;
+// }
+
+// function GradStud (name, major,thesis) { // Class student and gradstud has a lot of similarities
+//     Student.call(this,name,major);
+//     this.thesis = thesis;
+// }
+
+// const s1 = new Student("wish", "cs");
+// const s2 = new Student("nowish", "cs");
+// const s3 = new Student("emma", "cs");
+// const s4 = new Student.call({},"Wish","cs");
+// const s5 = new GradStud("Wi","cs","relational_patterns");
+
+// console.log(s5);
+
+// Student.prototype.C = function () { //Prototype object is a reference to the parent object
+//     //Creating a property in the parent so there is not multiple copies of the prototype
+//     console.log(this.name, ":", this.major);
+// };
+
+class Student {
+    constructor(name, major){
+        this.name = name;
+        this.major = major;
+    }
+    print() {
+        console.log(this.name, ":", this.major);
+    };
+}
+
+class GradStud extends Student {
+    constructor(name, major,thesis){
+        super(name,major);
+        this.thesis = thesis;
+    }
+    print() {
+        console.log(this.name, ":", this.major,":",this.thesis);
+    };
 }
 
 const s1 = new Student("wish", "cs");
-const s2 = new Student("nowish", "cs");
-const s3 = new Student("emma", "cs");
+const s2 = new GradStud("wish", "cs","nono");
 
-Student.prototype.printDetails = function () {
-    console.log(this.name, ":", this.major);
-};
+s1.print();
+s2.print();
 
-s2.printDetails();
+// GradStud.prototype.C = Object.create(Student.prototype);
+
+// s2.C();
+// s5.C();
 
 
-console.log(s1.constructor);
+// console.log(s1.constructor);
 
 let o3 = { v1: 56}
 
 let o4 = [1,2,3]
 
-console.log(s1);
+// console.log(s1);
+
+
