@@ -158,3 +158,40 @@ let o4 = [1,2,3]
 // console.log(s1);
 
 
+// New lecture
+
+// function add(x:any, y:any): any
+// function add(x,y){
+//     return x + y
+
+// }
+
+
+function ho_function() {
+    return function (x,y){
+        return x + y;
+    };
+}
+// lexical environment record is the parent record/ global record.
+// closure: JS knows to keep which variables around in the global scope so you do not have a issue. This only applies when a function is returned
+function inc() {
+    const incVal = 1; // kept in lexical environment record if a function uses it
+    return function (x){
+        return x + incVal;
+    };
+}
+
+const fun = ho_function();
+console.log(fun(1,2))
+
+const fun1 = inc();
+console.log(fun1(10));
+
+// const util = require_util();
+
+// util.setVal(100);
+
+// console.log(util.getVal());
+
+const util1 = require("./util")
+
