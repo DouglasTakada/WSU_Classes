@@ -193,5 +193,41 @@ console.log(fun1(10));
 
 // console.log(util.getVal());
 
-const util1 = require("./util")
+// const util = require("./util")
+
+// console.log(util)
+
+// import valC from "./util.js";
+
+// console.log(valC);
+
+//Map filter reduce
+
+let arr = [1,2,3,4,5,6,7,8,9]
+
+
+function isEven(x) {
+    return x%2 ==0;
+}
+
+let arr1 = arr.filter(isEven);// filter input must be a boolean returing function
+
+function sq(x){
+    return Math.pow(x,2);
+}
+
+let arr2 = arr1.map(sq);//Map input must take one input and return one value
+
+console.log(arr1);
+
+function add(x,y){//Reduce takes two elements
+    return x + y;
+}
+
+console.log(arr2);
+
+let result = arr2.reduce(add,0);
+
+console.log(result);
+
 

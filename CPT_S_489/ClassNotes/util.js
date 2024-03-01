@@ -1,17 +1,24 @@
 // function require_util(){
 //     console.log("Loaded Util")
 
-    let val = 11;
+let val = 11;
 
-    function getVal(){
+export default class valClass {
+    constructor(val){
+        this.val = val;
+    }
+}
+
+export function getVal(){
         return val;
     }
 
     console.log(module);
 
-module.exports = {
-    getVal:getVal,
-}
+// module.exports = {
+    
+//     getVal:getVal,
+// }
 
 //     function setVal(new_val){
 //         val = new_val;
@@ -24,3 +31,5 @@ module.exports = {
 //         setVal:setVal,
 //     }
 // }
+
+
