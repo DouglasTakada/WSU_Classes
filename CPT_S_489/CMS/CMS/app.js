@@ -4,9 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const User= require('./models/User')
 
 var indexRouter = require('./routes/index');
 var coursesRouter = require('./routes/courses');
+const sequelize = require('./db');
 
 var app = express();
 
@@ -46,5 +48,15 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+async function setup() {
+  const jane = await User.create({username: "Jane", password: "1234"});
+  console.log("Jane instance created");
+}
+
+sequelize.sync({ force: true}).then(()=>{
+  console.log("Sequelize Sync Completed...");
+  setup().then(()=> console.log("User setup complete"));
+})
 
 module.exports = app;
