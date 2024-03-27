@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
-const User= require('./models/User')
+const User = require('./models/User')
+const Course = require('./models/Course')
 
 var indexRouter = require('./routes/index');
 var coursesRouter = require('./routes/courses');
@@ -50,7 +51,7 @@ app.use(function(err, req, res, next) {
 });
 
 async function setup() {
-  const jane = await User.create({username: "Jane", password: "1234"});
+  const jane = await User.create({username: "doug", password: "1"});
   console.log("Jane instance created");
 }
 
