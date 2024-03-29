@@ -36,9 +36,10 @@ Course.init({
     allowNull: false
   },
   enrollnum: {
-    type: DataTypes.TEXT,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
+}, {
   // Other model options go here
   sequelize, 
   modelName: 'Course'

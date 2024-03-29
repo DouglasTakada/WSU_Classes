@@ -53,6 +53,13 @@ app.use(function(err, req, res, next) {
 async function setup() {
   const jane = await User.create({username: "doug", password: "1"});
   console.log("Jane instance created");
+  const webdev = await Course.create({
+    courseid: "CPTS489",
+    coursename: "Web Dev",
+    semester: "Spring",
+    coursedesc: "Introcution to webdev",
+    enrollnum: 80
+  })
 }
 
 sequelize.sync({ force: true}).then(()=>{
