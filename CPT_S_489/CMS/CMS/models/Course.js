@@ -5,7 +5,7 @@ class Course extends Model {
 
     static async findCourse(courseid){
         try {
-            const course = await User.findByPk(courseid)
+            const course = await Course.findByPk(courseid)
             return course ? course : null
         } catch (error) {
             console.log(error)
