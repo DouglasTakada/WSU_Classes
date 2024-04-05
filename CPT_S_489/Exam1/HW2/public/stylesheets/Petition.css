@@ -1,0 +1,71 @@
+
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: whitesmoke;
+}
+
+.header1{
+    grid-area: header1;
+    padding: 35px;
+}
+
+.header1 .image{
+    float: inline-start;
+    height: 5%;
+}
+
+.header1 .signin{
+    float: inline-end;
+}
+
+.content{
+    grid-area: content;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.content .left{
+    background-color: white;
+    float: inline-start;
+    width: 800px;
+    padding: 35px;
+}
+
+.content .left .top h3{
+    font-size: 30pt;
+}
+
+.content .left .top p{
+    font-size: 12pt;
+}
+
+.content .left .top{
+    border-bottom: solid 1px grey;
+}
+
+.content .right{
+    background-color: rgb(109, 109, 227);
+}
+
+.content .right h3{
+    font-size: 30pt;
+}
+
+.content .right p{
+    font-size: 12pt;
+}
+
+.content .right input{
+    float: none;
+    margin: 20px;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-areas:
+    "header1 header1 header1 header1 header1 header1 header1 header1 header1 header1"
+    "content content content content content content content content content content";
+}
