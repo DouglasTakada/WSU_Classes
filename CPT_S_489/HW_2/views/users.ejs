@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/Petition.css">
+    <link rel="icon" href="/images/logl.PNG">
+    <title>Move CPTS 489 to the Evening</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header1">
+            <div class="image" style="height: 100px;"><img src="images/Capture.PNG" alt=""></div>
+            <div class="signin">Sign in or Join</div>
+        </div>    
+        <div class="content">
+            <div class="left">
+                <div class="top">
+            <h3>Move CPTS 489 to the Evening</h3>
+
+            <h4>661 people have signed this petition. Add your name now!</h4>
+            <p>The Office Of WSU      156 Comments</p>
+            </div>
+            <img style="padding: 35px;" src="images/e8142d65ee88b33663deb97f95db7957.jpg" alt="">
+            <p>We, the undersigned members of the CPTS 489 course community, respectfully request the consideration of moving the class schedule from its current 8 AM time slot to the evening hours. As committed students passionate about our academic pursuits, we believe that relocating the course to the evening will facilitate greater attendance and participation among our peers. The early morning timing poses significant challenges for many students, including those with long commutes, work commitments, or other academic obligations, limiting their ability to fully engage with the course material and contribute meaningfully to class discussions</p>
+            <p>By moving CPTS 489 to the evening, we aim to foster a more inclusive and accessible learning environment that accommodates the diverse needs and schedules of our student body. This adjustment would not only enhance the overall learning experience but also promote student success and academic excellence within the program. We urge the administration and relevant stakeholders to consider our petition and collaborate with the student body to implement this change, thereby ensuring that every student has the opportunity to thrive and excel in their educational endeavors.
+            </p>
+            <h4>Comments</h4>
+            <table class="table" colspan="10">
+                <thead>
+                  <tr>
+                    <th scope="col" >Name</th>
+                    <th scope="col" style="padding-left: 400px;">Comment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for (u of users) { %>
+                    <tr>
+                      <td><%= u.name %></td>
+                      <td style="padding-left: 400px;"><%= u.comment %></td>
+                    </tr>
+                  <% } %>
+                </tbody>
+              </table>
+              <h4>Signatures</h4>
+              <% for (u of users) { %>
+                <p style="padding: 40px; background-color: whitesmoke; display: inline-block;"><%= u.name %></p>  
+              <% } %>
+            </div>
+
+        <div class="right">SIGN THIS PETITION
+            <h4>661 people have signed this petition. Add your name now!</h4>
+
+            <form method="post" action="/signup">
+                <input type="text" id="name" required name="name" placeholder="Name*">
+                <input type="text" id="email" required name="email" placeholder="Email*">
+                <input type="text" id="comment" required name="comment" placeholder="Comments">
+                <input type="submit" value="SIGN PETITION">
+            </form>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
