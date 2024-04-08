@@ -1,0 +1,10 @@
+1. what is the salt that was added to each password?
+
+
+2. which user had the most failed logins, and how many failed logins did they have?
+
+The users with the most failed logins were:
+rogersn with 15, collinsa with 15, and gonzalezm with 15
+
+3. Which user has not logged in for the longest time?
+stewarte698
