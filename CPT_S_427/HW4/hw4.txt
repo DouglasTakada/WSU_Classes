@@ -1,10 +1,13 @@
 1. what is the salt that was added to each password?
 
+The salt that was added to each password was "relates"
+
+I found this out by using kali linux and running the command: "hashcat -m 0 -a 1 --username updatedpw.txt wordList.txt wordList.txt" in the directory that I downloaded both the files
 
 2. which user had the most failed logins, and how many failed logins did they have?
 
 The users with the most failed logins were:
-rogersn with 15, collinsa with 15, and gonzalezm with 15
+rogersn with 15, collinsa with 15, and gonzalezm with 15. I found this out in the python file I included labeled Problem #2
 
 3. Which user has not logged in for the longest time?
-stewarte698
+User with the longest time since loggin on was stewarte698, with their last login being in 2020-01-04 07:13:13. I found this with the python script I included labeled Problem #3
