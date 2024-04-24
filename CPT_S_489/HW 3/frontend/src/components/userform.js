@@ -26,18 +26,16 @@ async function postData(url = "", data = {}) {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    postData("http://localhost:4000/", {name, email, comment})
+    postData("http://localhost:4000/api/users", {name, email, comment})
     .then(res => setmsg(res.msg))
     .catch(console.error);
 }
-  
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
         <input type="text" id="name" required name="name" placeholder="Name*" onChange={(e) => setname(e.target.value)} />
         <input type="text" id="email" required name="email" placeholder="Email*" onChange={(e) => setemail(e.target.value)} />
         <input type="text" id="comment" required name="comment" placeholder="Comments" onChange={(e) => setcomment(e.target.value)} />
-        <input type="submit" value="SIGN PETITION" />
+        <input type="submit" value="SIGN PETITION" onClick={() => setmsg("")}/>
     </form>
   )
 }

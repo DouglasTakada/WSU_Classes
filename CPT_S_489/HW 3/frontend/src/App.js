@@ -10,7 +10,7 @@ function App() {
   const [msg,setmsg] = useState([""])
 
   useEffect(() =>{
-    fetch("http://localhost:4000/")
+    fetch("http://localhost:4000/api/users")
     .then(res => res.json())
     .then((user_array) => {
       console.log(user_array);
@@ -31,12 +31,12 @@ function App() {
             <div className="left">
                 <div className="top">
             <h3>Move CPTS 489 to the Evening</h3>
-            <div className='container'>
-              {msg.length >0 && <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {msg.length > 0 &&<div className='container'>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 {msg}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={() => setmsg("")}></button>
-              </div>}
-            </div>
+              </div>
+            </div>}
             <h4>661 people have signed this petition. Add your name now!</h4>
             <p>The Office Of WSU      156 Comments</p>
             </div>
