@@ -3,10 +3,10 @@ const { Model, DataTypes} = require('sequelize')
 
 class User extends Model {
 
-    static async findUser(first, last){
+    static async findUser(uid){
         try {
-            const user = await User.findByPk(first)
-            if (user && user.first === first && user.last === last) {
+            const user = await User.findByPk(uid)
+            if (user) {
                 return user
             } else{
                 return null
@@ -24,7 +24,8 @@ User.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    allowNull: false
+    allowNull: false,
+    autoIncrement: true,
   },
   first: {
     type: DataTypes.STRING,
@@ -54,14 +55,15 @@ User.init({
     type: DataTypes.STRING,
     allowNull: false
   },
-  memeber: {
+  member: {
     type: DataTypes.STRING,
     allowNull: false
   },
 }, {
   // Other model options go here
-  sequelize, 
-  modelName: 'User'
+  sequelize,
+  timestamps: false,
+  modelName: 'User',
 });
 
 module.exports = User

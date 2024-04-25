@@ -1,0 +1,23 @@
+<% if (locals.msg) {%>
+    <% if (msg === "success") {%>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>User #<%=uid%></strong> added Succesfully.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <%} else if (msg === "error"){%>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>There are missing required fields in the form submission</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <%} else if (msg === "successdel"){%>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>User #<%=uid%></strong> Succesfully Deleted.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <%} else if (msg === "unf"){%>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>User #<%=uid%></strong> Not Found.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% }%>
+<% }%>
