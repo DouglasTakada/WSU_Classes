@@ -15,10 +15,8 @@ router.get('/', async function(req, res, next) {
 });
 
 router.post('/adduser', 
-  // Validation middleware
+  // Validation middleware to validate age in backend
   [
-    body('last').notEmpty().withMessage('Last name is required'),
-    body('amount').toFloat().isFloat({ max: 150 }).withMessage('Amount must not exceed 150'),
     body('age').toInt().isInt({ min: 18 }).withMessage('Age must be 18 or above'),
   ],
   async function(req, res, next) {
@@ -30,19 +28,33 @@ router.post('/adduser',
     }
 
     try {
-      // Create user with validated data
-      await User.create({
-        first: req.body.first || "",
-        last: req.body.last || "",
-        age: req.body.age || "",
-        gender: req.body.gender || "",
-        location: req.body.location || "",
-        drink: req.body.drink || "",
-        amount: req.body.amount || "0",
-        member: req.body.member || "",
-      });
+      // Check if atleast one of the checkbox has been selected on backend
+      let multiselectArray = []
+      if (req.body.online == 'on')
+      multiselectArray.push('online')
+      if (req.body.inperson == 'on')
+      multiselectArray.push('inperson')
+      if (req.body.hybrid == 'on')
+      multiselectArray.push('hybrid')
 
-      res.redirect('/?msg=success&uid'+req.body.id);
+      if (multiselectArray.length !== 0){
+        await User.create({ // Create user with validated data
+          first: req.body.first || "",
+          last: req.body.last || "",
+          age: req.body.age || "",
+          gender: req.body.gender || "",
+          relavance: req.body.relavance || "",
+          modality: JSON.stringify(multiselectArray),
+          grading: req.body.grading || "",
+          material: req.body.material || "",
+        });
+  
+        res.redirect('/?msg=success&uid'+req.body.id);
+      } else {
+        res.redirect('/?msg=fail&uid'+req.body.id);
+      }
+      
+      
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');

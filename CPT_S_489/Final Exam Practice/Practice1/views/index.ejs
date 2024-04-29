@@ -1,94 +1,178 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>489 Course Survey</title>
+    <link rel="icon" href="images/download.jpg">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
+    <div class="col text-right">
+      <img src="images/image2.png"  width="25%" alt="Image of Washington State University" srcset="">
+    </div>
+    <div class="container">     <!-- Title -->
+      <header class="border-bottom h-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col text-center">
+            <a class="blog-header-logo text-decoration-none display-5 text-danger fw-bold" href="/">CPT_S 489 Course Survey</a>
+          </div>
+        </div>
+      </header>
+    </div>
     <%- include("msgs")%>
-    <form method="post" action="/adduser">
-      <div class="form-group">
-        <label for="exampleInputEmail1">First Name</label>
-        <input type="text" class="form-control" name="first" aria-describedby="emailHelp" placeholder="Enter First Name">
+    <main>
+      <div class="p-3 p-md-4 mb-1 rounded text-body-emphasis bg-light shadow">
+        <form method="post" action="/adduser">
+          <div class="form-group">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" class="form-control" name="first" aria-describedby="emailHelp" placeholder="Enter First Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Last Name</label>
+            <input type="text" class="form-control" name="last" placeholder="Enter Last Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Gender</label>
+            <select class="form-control"name="gender">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Age</label>
+            <select class="form-control" name="age" id="age">
+              <% for (var i = 18; i <= 100; i++) { %>
+                <option value="<%= i %>"><%= i %></option>
+            <% } %>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Course Content Relevance: </label>
+            <small class="form-text text-muted">How relevant is the course content to your academic and career goals? (Scale of 1 to 10)</small>
+            <select class="form-control" name="relavance">
+              <% for (var i = 1; i <= 10; i++) { %>
+                <option value="<%= i %>"><%= i %></option>
+            <% } %>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Teaching Modality: </label>
+            <small class="form-text text-muted">Select the modalities you recommend (e.g., online, in-person, hybrid). You can select more than one option.</small>
+            <div>
+              <input type="checkbox" id="online" name="online">
+              <label for="online">Online</label><br>
+              <input type="checkbox" id="inperson" name="inperson">
+              <label for="inperson">In-Persion</label><br>
+              <input type="checkbox" id="hybrid" name="hybrid">
+              <label for="hybrid">Hybrid</label><br>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Assessment and Grading: </label>
+            <small class="form-text text-muted">How fair and transparent do you perceive the assessment and grading methods used in the course? (Scale of 1 to 10)</small>
+            <select class="form-control" name="grading">
+              <% for (var i = 1; i <= 10; i++) { %>
+                <option value="<%= i %>"><%= i %></option>
+            <% } %>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Course Materials: </label>
+            <small class="form-text text-muted">Rate the quality and accessibility of course materials (e.g., textbooks, lecture slides, online resources) (Scale of 1 to 10)</small>
+            <select class="form-control" name="material">
+              <% for (var i = 1; i <= 10; i++) { %>
+                <option value="<%= i %>"><%= i %></option>
+            <% } %>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Last Name</label>
-        <input type="text" class="form-control" name="last" placeholder="Enter Last Name" required>
+      
+      <div class="p-3 p-md-4 mb-1 rounded text-body-emphasis bg-light shadow">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Age</th>
+              <th scope="col">Course Content Relevance</th>
+              <th scope="col">Teaching Modality</th>
+              <th scope="col">Assessment and Grading</th>
+              <th scope="col">Course Materials</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <% for (u of user) { %>
+              <tr>
+                <td><%= u.first %></td>
+                <td><%= u.last %></td>
+                <td><%= u.gender %></td>
+                <td><%= u.age %></td>
+                <td><%= u.relavance %></td>
+                <td><%= u.modality %></td>
+                <td><%= u.grading %></td>
+                <td><%= u.material %></td>
+                <td>
+                  <a class="btn btn-danger" href="/" role="button" data-bs-toggle="modal" data-bs-target="#deleteuser">
+                    Remove
+                  </a>
+                  
+                </td>
+              </tr>
+            <% } %>
+        </table>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Gender</label>
-        <select class="form-control"name="gender">
-          <option>Male</option>
-          <option>Female</option>
-          <option>Other</option>
-        </select>
+
+    </main>
+
+    <% if (typeof user !== 'undefined' && user.length !== 0) { %>
+      <div class="modal fade" id="deleteuser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Delete User Survey Submission?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want remove <%=u.first%> survey from the table?
+            </div>
+            <div class="modal-footer">
+              <form action=<%= "/delete/"+ u.id %> method="get">
+                <div class="form-group col d-inline-block">
+                  <button type="submit" value="<%=u.id%>" name="user" class="btn btn-danger">Remove User Sumbission</button>
+                </div>
+              </form>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Age</label>
-        <select class="form-control" name="age">
-          <% for (var i = 18; i <= 60; i++) { %>
-            <option value="<%= i %>"><%= i %></option>
-        <% } %>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Franchise Location (Full Address)</label>
-        <input type="text" class="form-control" name="location" aria-describedby="emailHelp" placeholder="Enter Full Address">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Drinks Ordered</label>
-        <select class="form-control" name="drink">
-          <% for (var i = 0; i <= 60; i++) { %>
-            <option value="<%= i %>"><%= i %></option>
-        <% } %>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Amount Spent</label>
-        <select class="form-control" name="amount">
-          <% for (var i = 0; i <= 150; i++) { %>
-            <option value="<%= i %>">$<%= i %></option>
-        <% } %>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">A Member?</label>
-        <select class="form-control" name="member">
-          <option>Yes</option>
-          <option>No</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">User ID</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Gender</th>
-          <th scope="col">Age</th>
-          <th scope="col">Location</th>
-          <th scope="col">Drink Ordered</th>
-          <th scope="col">Amount Spent</th>
-          <th scope="col">Member</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for (u of user) { %>
-          <tr>
-            <td><a href=<%= "/"+ u.id %>> <%= u.id %></a></td>
-            <td><%= u.first %></td>
-            <td><%= u.last %></td>
-            <td><%= u.gender %></td>
-            <td><%= u.age %></td>
-            <td><%= u.location %></td>
-            <td><%= u.drink %></td>
-            <td>$<%= u.amount %></td>
-            <td><%= u.member %></td>
-          </tr>
-        <% } %>
-    </table>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <%}%>
+
+    <script>
+      // Verfiying checkbox and age on frontend
+      function validate(){
+        const age = document.getElementById('age');
+        if (parseInt(age) <18){
+          alert("Please select a valid age. 18 and up");
+          return false;
+        }
+        const online = document.getElementById('online');
+        const virtual = document.getElementById('inperson');
+        const hybrid = document.getElementById('hybrid');
+        if (!online.checked && !virtual.checked && !hybrid.checked){
+            alert("Please select atleast one of the Teaching Modality");
+            return false;
+        }else{
+            return true;
+        }
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

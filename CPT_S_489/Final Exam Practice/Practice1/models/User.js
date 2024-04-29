@@ -43,19 +43,19 @@ User.init({
     type: DataTypes.STRING,
     allowNull: false
   },
-  location: {
+  relavance: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  drink: {
+  modality: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  amount: {
+  grading: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  member: {
+  material: {
     type: DataTypes.STRING,
     allowNull: false
   },
